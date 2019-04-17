@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.Controller">
+   <left>
+      <TreeView fx:id="packageExplorer" onMouseClicked="#packageClick" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open" />
+              <MenuItem fx:id="saveFileBtn" disable="true" mnemonicParsing="false" onAction="#saveFile" text="Save" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+               <items>
+                  <MenuItem fx:id="addPackageBtn" disable="true" mnemonicParsing="false" onAction="#addPackage" text="Add package" />
+                  <MenuItem fx:id="deletePackage" disable="true" mnemonicParsing="false" onAction="#deletePackage" text="Delete package" />
+                  <MenuItem fx:id="addClassBtn" disable="true" mnemonicParsing="false" onAction="#addClass" text="Add class" />
+                  <MenuItem fx:id="addInterfaceBtn" disable="true" mnemonicParsing="false" onAction="#addInterface" text="Add interface" />
+                  <MenuItem fx:id="deleteClassBtn" disable="true" mnemonicParsing="false" onAction="#deleteClass" text="Delete class" />
+                  <RadioMenuItem fx:id="addJythonBtn" disable="true" mnemonicParsing="false" onAction="#addJython" text="Add Jython" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="18.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="showMethodsBtn" disable="true" mnemonicParsing="false" onAction="#showMethods" prefWidth="200.0" text="Methods" />
+                  <Button fx:id="showConstructorsBtn" disable="true" mnemonicParsing="false" onAction="#showConstructors" prefWidth="200.0" text="Constructors" />
+                  <Button fx:id="showFieldsBtn" disable="true" mnemonicParsing="false" onAction="#showFields" prefWidth="200.0" text="Fields" />
+               </children>
+            </HBox>
+            <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="27.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="addClickBtn" disable="true" mnemonicParsing="false" onAction="#addClick" prefWidth="200.0" text="Add" />
+                  <Button fx:id="deleteClickBtn" disable="true" mnemonicParsing="false" onAction="#deleteClick" prefWidth="200.0" text="Delete" />
+                  <Button fx:id="setBodyBtn" disable="true" mnemonicParsing="false" onAction="#setBodyClick" prefWidth="200.0" text="Set Body" />
+                  <Button fx:id="insertFrontBtn" disable="true" mnemonicParsing="false" onAction="#insertFrontClick" prefWidth="200.0" text="Insert in front" />
+                  <Button fx:id="insertEndBtn" disable="true" mnemonicParsing="false" onAction="#insertEndClick" prefWidth="200.0" text="Insert in the end" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="16.0" prefWidth="600.0">
+               <children>
+                  <Label text="Your code:" />
+               </children>
+            </HBox>
+            <TextArea fx:id="code" prefHeight="297.0" prefWidth="600.0" />
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <ProgressBar fx:id="progressBar" prefHeight="18.0" prefWidth="809.0" progress="0.0" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
