@@ -1,10 +1,10 @@
 package app.controller;
 
-import app.save.SaveTask;
 import app.javassist.*;
 import app.other.Alerts;
 import app.other.Explore;
 import app.other.PackageBuilder;
+import app.save.SaveTask;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -37,6 +37,7 @@ public class Controller {
 
     @FXML
     private MenuItem addInterfaceBtn;
+
 
     @FXML
     private MenuItem deleteClassBtn;
@@ -86,6 +87,7 @@ public class Controller {
         explore = Explore.METHODS;
     }
 
+
     private void setButtons(boolean value) {
         addClickBtn.setDisable(value);
         deleteClickBtn.setDisable(value);
@@ -105,7 +107,6 @@ public class Controller {
         addInterfaceBtn.setDisable(value);
         deleteClassBtn.setDisable(value);
         addJythonBtn.setDisable(value);
-
     }
 
 
@@ -211,7 +212,14 @@ public class Controller {
     void addJython() {
         if(addJythonBtn.isSelected()){
             Add.setJython(true);
-            Alerts.information("Jython added!");
+            try {
+                Add.addJython();
+                Alerts.information("Jython added!");
+            } catch (NotFoundException e) {
+                Alerts.warning(e.getMessage());
+            } catch (CannotCompileException e) {
+                Alerts.warning(e.getMessage());
+            }
         } else{
             Add.setJython(false);
             Alerts.information("Jython disabled");

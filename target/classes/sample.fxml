@@ -55,7 +55,7 @@
                <children>
                   <Button fx:id="addClickBtn" disable="true" mnemonicParsing="false" onAction="#addClick" prefWidth="200.0" text="Add" />
                   <Button fx:id="deleteClickBtn" disable="true" mnemonicParsing="false" onAction="#deleteClick" prefWidth="200.0" text="Delete" />
-                  <Button fx:id="setBodyBtn" disable="true" mnemonicParsing="false" onAction="#setBodyClick" prefWidth="200.0" text="Body" />
+                  <Button fx:id="setBodyBtn" disable="true" mnemonicParsing="false" onAction="#setBodyClick" prefWidth="200.0" text="Set Body" />
                   <Button fx:id="insertFrontBtn" disable="true" mnemonicParsing="false" onAction="#insertFrontClick" prefWidth="200.0" text="Front" />
                   <Button fx:id="insertEndBtn" disable="true" mnemonicParsing="false" onAction="#insertEndClick" prefWidth="200.0" text="End" />
                </children>

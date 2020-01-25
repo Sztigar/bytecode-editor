@@ -5,15 +5,19 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import jfxtras.styles.jmetro8.JMetro;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
-        primaryStage.setTitle("Wojtek Regulski JFK");
+        new JMetro(JMetro.Style.DARK).applyTheme(root);
         primaryStage.setScene(new Scene(root, 800, 600));
+        primaryStage.setTitle("JFK");
+        primaryStage.setResizable(false);
         primaryStage.show();
+
     }
 
 

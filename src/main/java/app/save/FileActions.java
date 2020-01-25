@@ -6,6 +6,7 @@ import javassist.CtClass;
 import javassist.NotFoundException;
 
 import java.io.*;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.jar.JarEntry;
@@ -15,7 +16,7 @@ import java.util.jar.JarOutputStream;
 
 
 //tutaj mamy wszystkie operacje na plikach jak wypakowywanie, pakowanie, usuwanie i dodawanie jythona
-public abstract class FileActions {
+public class FileActions {
 
 
     //ze stacka
@@ -40,6 +41,7 @@ public abstract class FileActions {
         }
         jar.close();
     }
+
 
     //ze stacka
     static void pack(File newFile) throws IOException {
@@ -130,7 +132,7 @@ public abstract class FileActions {
         f.setLength(length + 1);
         f.close();
         FileWriter fr = new FileWriter(destinationFile + "\\META-INF\\MANIFEST.MF", true);
-        fr.write("Class-Path: jython-standalone-2.5.4-rc1.jar\n");
+        fr.write("Class-Path: jython-standalone-2.7.1.jar\n");
         fr.close();
     }
     //pobiera z jara wszystkie sciezki do klasy jakie tam sa

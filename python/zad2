@@ -1,0 +1,7 @@
+from com.diamond.iain.javagame import Game
+from com.diamond.iain.javagame.entities import Player
+player = Game.getPlayer()
+player.setX(200)
+player.setY(700)
+player.setXY(500, 500)
+

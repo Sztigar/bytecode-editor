@@ -7,7 +7,7 @@ import javassist.NotFoundException;
 import java.io.File;
 
 //głowna klasa obslugi javassist w ktorej jest ClassPool i CtClass ktore ustala sie przy kliknieciu na explorator pakietow gdy cos konczy sie na .class
-public abstract class Javassist {
+public class Javassist {
 
     //ClassPool przechowuje nasze klasy z niego mozemy wyciagac przez .get(nazwaklasy) rozne klasy
     private static ClassPool pool;

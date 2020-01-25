@@ -1,0 +1,8 @@
+from javax import swing
+frame = swing.JFrame()
+infile = open('C:\\Users\\Mateusz\\dane.txt', 'r')
+firstLine = infile.readline()
+label = swing.JLabel(firstLine)
+frame.setBounds(0,0,300,300)
+frame.getContentPane().add(label)
+frame.setVisible(True)

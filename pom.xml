@@ -8,6 +8,24 @@
     <artifactId>bytecode-manipulator</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <build>
+    <plugins>
+        <plugin>
+            <groupId>com.zenjava</groupId>
+            <artifactId>javafx-maven-plugin</artifactId>
+            <version>8.7.0</version>
+            <configuration>
+                <mainClass>app.Main</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
@@ -17,7 +35,17 @@
             <version>3.24.1-GA</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.jfxtras/jmetro -->
+        <dependency>
+            <groupId>org.jfxtras</groupId>
+            <artifactId>jmetro</artifactId>
+            <version>5.3</version>
+        </dependency>
+
+
     </dependencies>
+
+
 
     
 </project>

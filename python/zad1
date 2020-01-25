@@ -1,0 +1,6 @@
+from javax import swing
+frame = swing.JFrame()
+label = swing.JLabel("Hello JVM")
+frame.setBounds(300,300,300,300)
+frame.getContentPane().add(label)
+frame.setVisible(True)

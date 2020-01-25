@@ -8,7 +8,7 @@ import javassist.CtField;
 import javassist.CtMethod;
 
 //pobieramy tutaj z klasy metody konstruktory albo fieldy
-public abstract class Get {
+public class Get {
     private static CtClass ctClass;
 
     public static void setCtClass(CtClass ctClass) {

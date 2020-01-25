@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 
 //klasa odpowiedzialna za usuwanie rzeczy z edytowanego programu
-public abstract class Delete {
+public class Delete {
     private static CtClass ctClass;
     private static ArrayList<String> addedClasses = new ArrayList<String>();
     private static ArrayList<String> addedPackages = new ArrayList<String>();

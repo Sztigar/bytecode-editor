@@ -3,7 +3,7 @@ package app.javassist;
 import javassist.*;
 
 //klasa odpowiedzialna za edytowanie rzeczy w edytowanym programie
-public abstract class Edit {
+public class Edit {
     private static CtClass ctClass;
 
     public static void setCtClass(CtClass ctClass) {
