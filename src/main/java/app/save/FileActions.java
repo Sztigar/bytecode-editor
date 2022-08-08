@@ -25,7 +25,10 @@ public class FileActions {
         Enumeration enumEntries = jar.entries();
         while (enumEntries.hasMoreElements()) {
             JarEntry file = (JarEntry) enumEntries.nextElement();
-            File f = new File(destinationFile.getPath() + File.separator + file.getName());
+            File f = new File(destinationFile.getPath(), file.getName());
+            if (!f.toPath().normalize().startsWith(destinationFile.getPath())) {
+                throw new RuntimeException("Bad zip entry");
+            }
             if (f.getParentFile().mkdirs()) ;
             if (file.isDirectory()) {
                 f.mkdir();
